@@ -18,6 +18,18 @@
     <PackageReference Include="System.IO.Compression.ZipFile" Version="4.3.0" />
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Views\ShippedPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ArchivePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\HomePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\BrowsePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>

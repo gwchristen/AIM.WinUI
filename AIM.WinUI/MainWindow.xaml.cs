@@ -17,7 +17,7 @@ public sealed partial class MainWindow : Window
 
     public MainWindow()
     {
-        InitializeComponent();
+        this.InitializeComponent();
         Title = "AIM";
 
         // Capture the window's UI dispatcher for global use
@@ -28,6 +28,9 @@ public sealed partial class MainWindow : Window
 
         // If you’re binding via a named root element:
         // RootGrid.DataContext = VM;
+        
+        NavView.SelectedItem = NavView.MenuItems[1]; // Browse by default
+        ContentFrame.Navigate(typeof(BrowsePage));
     }
 
 
@@ -38,13 +41,6 @@ public sealed partial class MainWindow : Window
     }
 
     private string _lastTag = "browse";
-
-    public MainWindow()
-    {
-        this.InitializeComponent();
-        NavView.SelectedItem = NavView.MenuItems[1]; // Browse by default
-        ContentFrame.Navigate(typeof(BrowsePage));
-    }
 
     private async void NavView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
     {
