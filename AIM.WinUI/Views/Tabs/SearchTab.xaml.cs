@@ -1,0 +1,1 @@
+﻿namespace AIM.WinUI.Views.Tabs; public sealed partial class SearchTab : Microsoft.UI.Xaml.Controls.UserControl { public SearchTab(){ InitializeComponent(); } }

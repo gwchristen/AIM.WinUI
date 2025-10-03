@@ -1,0 +1,12 @@
+﻿## Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.iml
+bin/
+obj/
+# Publish
+publish/
+# Rider/JetBrains
+.idea/

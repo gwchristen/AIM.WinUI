@@ -1,0 +1,54 @@
+﻿<Window
+    x:Class="AIM.WinUI.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="using:AIM.WinUI.ViewModels"
+    xmlns:local="using:AIM.WinUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="AIM">
+
+	<!-- Bind this Grid's DataContext to the VM property on MainWindow -->
+	<Grid x:Name="RootGrid"
+          DataContext="{x:Bind VM, Mode=OneWay}">
+		<!-- Your shell layout -->
+		<NavigationView x:Name="ShellNav" IsBackButtonVisible="Collapsed">
+			<NavigationView.PaneHeader>
+				<TextBlock Text="AIM" />
+			</NavigationView.PaneHeader>
+
+			<NavigationView.PaneCustomContent>
+				<TreeView ItemsSource="{Binding RootNodes}">
+					<TreeView.ItemTemplate>
+						<DataTemplate x:DataType="vm:FolderNode">
+							<StackPanel Orientation="Horizontal" Spacing="8">
+								<SymbolIcon Symbol="Folder" />
+								<TextBlock Text="{x:Bind Name}" />
+							</StackPanel>
+						</DataTemplate>
+					</TreeView.ItemTemplate>
+				</TreeView>
+			</NavigationView.PaneCustomContent>
+
+			<Frame x:Name="ContentFrame" />
+		</NavigationView>
+
+        <NavigationView x:Name="NavView"
+                    IsBackButtonVisible="Collapsed"
+                    PaneDisplayMode="Left"
+                    SelectionChanged="NavView_SelectionChanged">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Icon="Home"    Content="Home"     Tag="home"/>
+                <NavigationViewItem Icon="Folder"  Content="Browse"   Tag="browse"/>
+                <NavigationViewItem Icon="Archive" Content="Archive"  Tag="archive"/>
+                <NavigationViewItem Icon="Send"    Content="Shipped"  Tag="shipped"/>
+                <NavigationViewItem Icon="Save"    Content="Backups"  Tag="backups"/>
+                <NavigationViewItemSeparator/>
+                <NavigationViewItem Icon="Settings" Content="Settings" Tag="settings"/>
+            </NavigationView.MenuItems>
+
+            <Frame x:Name="ContentFrame"/>
+        </NavigationView>
+    </Grid>
+</Window>

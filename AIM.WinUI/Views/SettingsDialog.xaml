@@ -1,0 +1,20 @@
+﻿<ContentDialog
+    x:Class="AIM.WinUI.Views.SettingsDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Settings"
+    PrimaryButtonText="Save"
+    SecondaryButtonText="Cancel">
+
+    <StackPanel Spacing="12">
+        <!-- You can move your previous content back here after it compiles -->
+        <TextBlock Text="Protected directories (Archive, Shipped, Backup) require unlock."/>
+
+		<!-- Use x:Name (NOT Name) so fields generate for code-behind -->
+		<TextBox x:Name="ArchiveBox" Header="Archive Folder (encrypted on save)" />
+		<TextBox x:Name="ShippedBox" Header="Shipped Folder (encrypted on save)" />
+		<TextBox x:Name="BackupBox" Header="Backup Folder (encrypted on save)" />
+		<PasswordBox x:Name="PwdBox" Header="Password" />
+
+	</StackPanel>
+</ContentDialog>

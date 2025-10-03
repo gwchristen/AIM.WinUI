@@ -1,0 +1,12 @@
+﻿<UserControl
+    x:Class="AIM.WinUI.Views.Tabs.BackupTab"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls">
+
+    <StackPanel Padding="8" Spacing="8">
+        <TextBlock Text="Create ZIP backup of Root (only) to the configured Backup folder."/>
+        <Button Content="Create Backup"/>
+        <TextBlock x:Name="LastBackup"/>
+    </StackPanel>
+</UserControl>
