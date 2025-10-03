@@ -54,5 +54,18 @@
                 </MenuFlyout>
             </Grid.ContextFlyout>
         </Grid>
+
+        <Grid Padding="12">
+            <TreeView x:Name="FolderTree">
+                <TreeView.NodeTemplate>
+                    <DataTemplate x:DataType="models:FsItem">
+                        <StackPanel Orientation="Horizontal" Spacing="8">
+                            <FontIcon Glyph="{x:Bind Glyph}"/>
+                            <TextBlock Text="{x:Bind Name}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </TreeView.NodeTemplate>
+            </TreeView>
+        </Grid>
     </Grid>
 </Page>
